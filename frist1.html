@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meghla | Profile</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Segoe UI';
+  background: linear-gradient(135deg,#6a11cb,#2575fc);
+  min-height:100vh;
+  display:flex;
+}
+
+/* MAIN */
+.main-content{
+  flex:1;
+  padding:40px 20px;
+  display:flex;
+  justify-content:center;
+}
+
+.profile-container{
+  max-width:800px;
+  width:100%;
+}
+
+/* HEADER */
+header{text-align:center;color:white;margin-bottom:40px;}
+
+.profile-img{
+  width:180px;height:180px;border-radius:50%;
+  border:5px solid white;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+h1{font-size:2.5rem;margin-top:15px;}
+.title{font-size:1.2rem;}
+.location{margin-top:8px;}
+
+/* SECTION */
+.section{
+  background:white;
+  margin-bottom:25px;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+h2{
+  color:#2575fc;
+  margin-bottom:20px;
+  border-bottom:2px solid #6a11cb;
+  display:inline-block;
+}
+
+/* SKILLS */
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
+}
+
+.skill-card{
+  background:#f1f3f5;
+  padding:15px;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.skill-card:hover{
+  transform:translateY(-5px);
+}
+
+/* ================= MENU BUTTON ================= */
+.menu-btn{
+  position:fixed;
+  top:20px;
+  right:20px;
+  background:#fff;
+  padding:12px 15px;
+  border-radius:10px;
+  cursor:pointer;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  z-index:1001;
+}
+
+/* ================= RIGHT MENU ================= */
+.right-sidebar{
+  width:260px;
+  background:white;
+  position:fixed;
+  right:-300px;
+  top:0;
+  height:100%;
+  padding:25px;
+  transition:0.4s;
+  box-shadow:-5px 0 20px rgba(0,0,0,0.2);
+  z-index:1000;
+}
+
+.right-sidebar.active{
+  right:0;
+}
+
+.contact-item{
+  padding:12px;
+  margin-bottom:10px;
+  background:#f1f3f5;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.contact-item:hover{
+  background:#dbeafe;
+  transform:translateX(-5px);
+}
+
+/* FLOAT BUTTON */
+.float-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.float-btn a{
+  width:50px;height:50px;
+  background:#2575fc;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border-radius:50%;
+  text-decoration:none;
+  font-size:20px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .menu-btn{top:10px;right:10px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- MENU BUTTON -->
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<!-- MAIN -->
+<div class="main-content">
+<div class="profile-container">
+
+<header>
+<img src="meghla.jpeg" class="profile-img">
+<h1>MST. MAYESHA AKTER MEGHLA</h1>
+<p class="title">English Honors Graduate</p>
+<p class="location">📍Mirpur, Kushtia, Bangladesh</p>
+</header>
+
+<div class="section">
+<h2>About Me</h2>
+  <p>
+ Hi, I'm <strong>Meghla</strong> from Mirpur, Kushtia.I have completed my Honors in English Literature. 
+I am passionate about languages, creative writing, automation in code, and digital content creation.
+        </p>
+</div>
+<!-- Education -->
+      <div class="section">
+        <h2>Education</h2>
+        <p><strong>Bachelor of Arts (Honors) in English📖</strong><br>
+           Department of English • [KUSHTIA GOVT. MAHILA COLLEGE]</p><br>
+        
+        <p><strong>Higher Secondary Certificate (HSC) - Arts📖</strong><br>
+           GPA: [4.50] • [AMLA GOVT. COLLEGE], Kushtia</p><br>
+        
+        <p><strong>Secondary School Certificate (SSC) - Arts📖</strong><br>
+           GPA: [4.44] • [NIMTALA HIGH SCHOOL], Mirpur, Kushtia</p>
+      </div>
+
+<div class="section">
+<h2>Skills</h2>
+<div class="skills-grid">
+<div class="skill-card">Bangla - Native</div>
+<div class="skill-card">English - Fluent</div>
+<div class="skill-card">Hindi - Intermediate</div>
+<div class="skill-card">Arabic - Beginner</div>
+<div class="skill-card">Korean - Beginner</div>
+<div class="skill-card">Python Automation</div>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- RIGHT MENU -->
+<div class="right-sidebar" id="menu">
+
+<h3>Contact</h3>
+
+<div class="contact-item" onclick="callNow()">📞 Call</div>
+<div class="contact-item" onclick="sendMail()">✉️ Email</div>
+<div class="contact-item" onclick="openWhatsApp()">💬 WhatsApp</div>
+<div class="contact-item" onclick="copyEmail()">📋 Copy Email</div>
+
+</div>
+
+<!-- FLOAT QUICK ACTION -->
+<div class="float-btn">
+<a href="tel:+8801577195904">📞</a>
+<a href="https://wa.me/8801577195904">💬</a>
+</div>
+
+<!-- JS AUTOMATION -->
+<script>
+function toggleMenu(){
+  document.getElementById("menu").classList.toggle("active");
+}
+
+function callNow(){
+  window.location.href="tel:+8801577195904";
+}
+
+function sendMail(){
+  window.location.href="mailto:mayshameghla91@gmail.com";
+}
+
+function openWhatsApp(){
+  window.open("https://wa.me/8801577195904","_blank");
+}
+
+function copyEmail(){
+  navigator.clipboard.writeText("mayshameghla91@gmail.com");
+  alert("Email Copied!");
+}
+
+/* AUTO CLOSE MENU WHEN CLICK OUTSIDE */
+document.addEventListener("click", function(e){
+  let menu = document.getElementById("menu");
+  let btn = document.querySelector(".menu-btn");
+
+  if(!menu.contains(e.target) && !btn.contains(e.target)){
+    menu.classList.remove("active");
+  }
+});
+</script>
+
+</body>
+</html>
